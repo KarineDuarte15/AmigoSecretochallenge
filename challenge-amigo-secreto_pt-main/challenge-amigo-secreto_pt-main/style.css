@@ -1,0 +1,177 @@
+/* Paleta de cores inspirada nas imagens (céu, grama, terra) */
+:root {
+    --color-sky-fallback: #63a4c7;  /* Cor de fallback para o fundo do céu */
+    --color-dirt-panel: #ab8961;    /* Cor de terra para o painel principal */
+    --color-dirt-input: #dcc8a9;    /* Cor de terra clara para o input */
+    --color-grass-button: #7ba147;  /* Cor de grama para os botões */
+    --color-grass-hover: #98c25b;   /* Hover mais claro para o botão */
+    
+    --color-border-dark: #513d28;   /* Borda escura (terra molhada) */
+    --color-border-light: #e0d5c3;  /* Borda clara (areia) */
+    
+    --color-text-dark: #3b2a1a;     /* Texto escuro (quase preto) */
+    --color-text-light: #FFFFFF;     /* Texto branco */
+    
+    --font-pixel: 'Press Start 2P', cursive;
+}
+
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background-image: url("img/background.jpg"); 
+    background-size: 40%; /* Faz a imagem cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* A imagem de fundo não rola com a página */
+    background-color: var(--color-sky-fallback); /* Cor de fundo caso a imagem não carregue */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-pixel);
+    color: var(--color-text-dark);
+    -webkit-font-smoothing: none;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Banner com a imagem dos personagens */
+.header-banner {
+    flex: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+
+    
+    background-image: url("img/amigos.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+/* Seção principal com os inputs */
+.input-section {
+    flex: 60%;
+    background-color: var(--color-dirt-panel); /* Painel cor de terra */
+    border: 4px solid;
+    border-color: var(--color-border-light) var(--color-border-dark) var(--color-border-dark) var(--color-border-light);
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Títulos */
+.main-title {
+    font-family: var(--font-pixel);
+    font-size: 3vw; /* Tamanho responsivo */
+    color: var(--color-text-light);
+    text-shadow: 4px 4px 0px var(--color-border-dark);
+}
+
+.section-title {
+    font-family: var(--font-pixel);
+    font-size: 18px;
+    color: var(--color-text-dark);
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Contêiner do input */
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.input-name {
+    width: 100%;
+    padding: 15px;
+    border-radius: 0;
+    font-size: 16px;
+    font-family: var(--font-pixel);
+    background-color: var(--color-dirt-input); /* Input cor de terra clara */
+    color: var(--color-text-dark);
+    border: 3px solid;
+    border-color: var(--color-border-dark) var(--color-border-light) var(--color-border-light) var(--color-border-dark);
+    box-shadow: none;
+}
+
+.input-name::placeholder {
+    color: #856d53;
+}
+
+/* Estilos de botão */
+button {
+    padding: 15px 30px;
+    font-family: var(--font-pixel);
+    font-size: 16px;
+    color: var(--color-text-light);
+    background-color: var(--color-grass-button); /* Botão cor de grama */
+    border: 4px solid;
+    border-color: var(--color-border-light) var(--color-border-dark) var(--color-border-dark) var(--color-border-light);
+    border-radius: 0;
+    box-shadow: none;
+    cursor: pointer;
+    text-shadow: 2px 2px var(--color-border-dark);
+}
+
+button:hover {
+    background-color: var(--color-grass-hover);
+}
+
+button:active {
+    border-color: var(--color-border-dark) var(--color-border-light) var(--color-border-light) var(--color-border-dark);
+}
+
+.button-container {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 30px;
+}
+
+.button-draw {
+    width: 100%;
+}
+
+/* Listas */
+ul {
+    list-style-type: none;
+    color: var(--color-text-dark);
+    font-size: 16px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.name-list li {
+    padding: 5px;
+    font-weight: bold;
+    color: var(--color-border-light);
+    text-shadow: 2px 2px var(--color-border-dark);
+}
+
+.result-list {
+    margin-top: 15px;
+    color: #a4ff2f; /* Verde limão para destaque */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
